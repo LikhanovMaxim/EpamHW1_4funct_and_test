@@ -39,32 +39,36 @@ public class IntersectArrays {
         }
         return flag;
     }
+    static int selectionMin(int firstNum, int secondNum){
+        if(firstNum<secondNum){
+            return firstNum;
+        }else {
+            return secondNum;
+        }
+    }
     static double[] intersectArrays(double[] firstArray, double[] secondArray) {
         if (firstArray == null || secondArray == null) {
             return null;
         }
         double[] intersArrays;
-        if (firstArray.length < secondArray.length) {
-            intersArrays = new double[firstArray.length];
-        } else {
-            intersArrays = new double[secondArray.length];
-        }
-        int count;
-        count = 0;
+        int dimension=selectionMin(firstArray.length, secondArray.length);
+        intersArrays=new double[dimension];
+        int dimensInterArr;
+        dimensInterArr = 0;
         for (int i = 0; i < firstArray.length; i++) {
             if (!entryElementArr(intersArrays, firstArray[i])) {
                 for (int j = 0; j < secondArray.length; j++) {
                     if (firstArray[i] == secondArray[j]) {
-                        intersArrays[count] = firstArray[i];
-                        count++;
+                        intersArrays[dimensInterArr] = firstArray[i];
+                        dimensInterArr++;
                         break;
                     }
                 }
             }
         }
         double[] optimizeInters;
-        optimizeInters = new double[count];
-        for (int i = 0; i < count; i++) {
+        optimizeInters = new double[dimensInterArr];
+        for (int i = 0; i < dimensInterArr; i++) {
             optimizeInters[i] = intersArrays[i];
         }
         return optimizeInters;
