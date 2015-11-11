@@ -40,7 +40,21 @@ public class Matrix {
         }
         return flag;
     }
-
+    static int[] columnToMas(int[][] Matrix, int column){
+        int[] columnToMas=new int[Matrix.length];
+        for(int i=0; i<Matrix.length; i++){
+            columnToMas[i]=Matrix[i][column];
+        }
+        return columnToMas;
+    }
+    static int mulRowColumn(int[] firstMas, int[] secondMas){
+        int sum;
+        sum=0;
+        for(int i=0; i<firstMas.length; i++){
+            sum+=firstMas[i]*secondMas[i];
+        }
+        return sum;
+    }
     static int[][] multiplMatrix(int[][] firstMatrix, int[][] secondMatrix) {
         if (firstMatrix == null || secondMatrix == null) {
             return null;
@@ -53,10 +67,7 @@ public class Matrix {
         mulMatrix = new int[firstMatrix[0].length][secondMatrix[0].length];
         for (int rows = 0; rows < firstMatrix.length; rows++) {
             for (int columns = 0; columns < secondMatrix[0].length; columns++) {
-                sum = 0;
-                for (int r = 0; r < secondMatrix.length; r++) {
-                    sum += firstMatrix[rows][r] * secondMatrix[r][columns];
-                }
+                sum = mulRowColumn(firstMatrix[rows], columnToMas(secondMatrix, columns));
                 mulMatrix[rows][columns] = sum;
             }
         }
