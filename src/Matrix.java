@@ -1,4 +1,4 @@
-public class Matrix { //возвращает перемножение двух матриц.
+public class Matrix {
     static void printMatrix(int[][] Matrix) {
         if (Matrix == null) {
             System.out.println("Matrix = null");
@@ -27,7 +27,7 @@ public class Matrix { //возвращает перемножение двух матриц.
         boolean flag;
         flag = true;
         for (int i = 0; i < firstMatrix.length && flag; i++) {
-            if (firstMatrix[i].length != secondMatrix[i].length) { //Проверяем разное ли кол-во столбцов.
+            if (firstMatrix[i].length != secondMatrix[i].length) {
                 flag = false;
                 break;
             }

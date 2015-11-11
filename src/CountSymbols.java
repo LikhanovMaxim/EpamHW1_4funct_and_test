@@ -1,4 +1,4 @@
-public class CountSymbols { //возвращает количество заданных символов в строке;
+public class CountSymbols {
     static int countSymbols(String str, char symbol) {
         if (str == null) {
             return 0;

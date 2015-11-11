@@ -1,5 +1,4 @@
-public class SameElements {// определяет, что в массиве строк есть одинаковые элементы;
-
+public class SameElements {
     static boolean sameElements(String[] mas) {
         if (mas == null) {
             return false;

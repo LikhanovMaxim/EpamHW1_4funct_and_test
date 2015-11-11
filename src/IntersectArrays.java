@@ -1,12 +1,11 @@
-
-public class IntersectArrays { // возвращает пересечение массивов double.
+public class IntersectArrays {
     static void printArray(double[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
         System.out.println();
     }
-    static boolean entryElementArr(double[] mas, double comparElem) { //entryElementArr проверяет есть ли элемент в массиве
+    static boolean entryElementArr(double[] mas, double comparElem) {
         if(mas==null){
             return false;
         }
@@ -46,7 +45,7 @@ public class IntersectArrays { // возвращает пересечение массивов double.
             return null;
         }
         double[] intersArrays;
-        if (firstArray.length < secondArray.length) {  // берем минимальную размерность
+        if (firstArray.length < secondArray.length) {
             intersArrays = new double[firstArray.length];
         } else {
             intersArrays = new double[secondArray.length];
@@ -54,7 +53,7 @@ public class IntersectArrays { // возвращает пересечение массивов double.
         int count;
         count = 0;
         for (int i = 0; i < firstArray.length; i++) {
-            if (!entryElementArr(intersArrays, firstArray[i])) {// если такого элемента в intersArrays еще нету
+            if (!entryElementArr(intersArrays, firstArray[i])) {
                 for (int j = 0; j < secondArray.length; j++) {
                     if (firstArray[i] == secondArray[j]) {
                         intersArrays[count] = firstArray[i];
@@ -64,7 +63,7 @@ public class IntersectArrays { // возвращает пересечение массивов double.
                 }
             }
         }
-        double[] optimizeInters;       // новый массив размерностью <=  intersArrays
+        double[] optimizeInters;
         optimizeInters = new double[count];
         for (int i = 0; i < count; i++) {
             optimizeInters[i] = intersArrays[i];
