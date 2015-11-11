@@ -4,9 +4,9 @@ public class Matrix {
             System.out.println("Matrix = null");
             return;
         }
-        for (int i = 0; i < Matrix.length; i++) {
-            for (int j = 0; j < Matrix[0].length; j++) {
-                System.out.print(Matrix[i][j] + " ");
+        for (int rows = 0; rows < Matrix.length; rows++) {
+            for (int columns = 0; columns < Matrix[0].length; columns++) {
+                System.out.print(Matrix[rows][columns] + " ");
             }
             System.out.println();
         }
@@ -26,13 +26,13 @@ public class Matrix {
         }
         boolean flag;
         flag = true;
-        for (int i = 0; i < firstMatrix.length && flag; i++) {
-            if (firstMatrix[i].length != secondMatrix[i].length) {
+        for (int rows = 0; rows < firstMatrix.length && flag; rows++) {
+            if (firstMatrix[rows].length != secondMatrix[rows].length) {
                 flag = false;
                 break;
             }
-            for (int j = 0; j < firstMatrix[i].length; j++) {
-                if (firstMatrix[i][j] != secondMatrix[i][j]) {
+            for (int columns = 0; columns < firstMatrix[rows].length; columns++) {
+                if (firstMatrix[rows][columns] != secondMatrix[rows][columns]) {
                     flag = false;
                     break;
                 }
@@ -51,16 +51,15 @@ public class Matrix {
         int sum;
         int[][] mulMatrix;
         mulMatrix = new int[firstMatrix[0].length][secondMatrix[0].length];
-        for (int i = 0; i < firstMatrix.length; i++) {
-            for (int j = 0; j < secondMatrix[0].length; j++) {
+        for (int rows = 0; rows < firstMatrix.length; rows++) {
+            for (int columns = 0; columns < secondMatrix[0].length; columns++) {
                 sum = 0;
                 for (int r = 0; r < secondMatrix.length; r++) {
-                    sum += firstMatrix[i][r] * secondMatrix[r][j];
+                    sum += firstMatrix[rows][r] * secondMatrix[r][columns];
                 }
-                mulMatrix[i][j] = sum;
+                mulMatrix[rows][columns] = sum;
             }
         }
         return mulMatrix;
     }
-
 }

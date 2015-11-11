@@ -39,7 +39,6 @@ public class IntersectArrays {
         }
         return flag;
     }
-
     static double[] intersectArrays(double[] firstArray, double[] secondArray) {
         if (firstArray == null || secondArray == null) {
             return null;

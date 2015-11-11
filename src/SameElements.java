@@ -4,9 +4,9 @@ public class SameElements {
             return false;
         }
         boolean flag = false;
-        for (int i = 0; i < mas.length; i++) {
-            for (int j = i + 1; j < mas.length; j++) {
-                if (mas[i].equals(mas[j])) {
+        for (int firstWord = 0; firstWord < mas.length; firstWord++) {
+            for (int secondWord = firstWord + 1; secondWord < mas.length; secondWord++) {
+                if (mas[firstWord].equals(mas[secondWord])) {
                     flag = true;
                     break;
                 }
