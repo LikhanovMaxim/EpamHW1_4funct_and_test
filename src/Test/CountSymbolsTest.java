@@ -5,13 +5,19 @@ import static org.junit.Assert.*;
 public class CountSymbolsTest {
 
     @Test
-    public void testCountSymbols() throws Exception {
+    public void testEmptyTextCountSymbols() throws Exception {
         assertEquals(0, CountSymbols.countSymbols("", 'p'));
-        assertEquals(1, CountSymbols.countSymbols("Epam", 'p'));
-        assertEquals(3, CountSymbols.countSymbols("Epampmp", 'p'));
-        assertEquals(2, CountSymbols.countSymbols("addddddda", 'a'));
+    }
+    @Test
+    public void testNullCountSymbols() throws Exception {
         assertEquals(0, CountSymbols.countSymbols(null, 'a'));
-        assertEquals(0, CountSymbols.countSymbols("Test number 6", 'f'));
+    }
+    @Test
+    public void testOccurenCountSymbols() throws Exception {
+        assertEquals(3, CountSymbols.countSymbols("Epampmp", 'p'));
+    }
+    @Test
+    public void testNoOccurenCountSymbols() throws Exception {
         assertEquals(0, CountSymbols.countSymbols("Test number 7", 'N'));
     }
 }

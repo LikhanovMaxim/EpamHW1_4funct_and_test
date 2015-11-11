@@ -6,16 +6,16 @@ import static junit.framework.TestCase.*;
 public class SameElementsTest {
 
     @Test
-    public void testSameElements() throws Exception {
-        String[] test1 = {"Vasja", "Misha", "Petr", "Anna"};
-        assertFalse(SameElements.sameElements(test1));
-
-        String[] test2 = {"Vasja", "Misha", "Petr", "Misha", "Anna"};
-        assertTrue(SameElements.sameElements(test2));
-
-        String[] test3 = {"Vlad", "Vlad", "Vlad"};
-        assertTrue(SameElements.sameElements(test3));
-
+    public void testDifferWordsSameElements() throws Exception {
+        String[] test = {"Vasja", "Misha", "Petr", "Anna"};
+        assertFalse(SameElements.sameElements(test));
+    }
+    @Test
+    public void testSameWordsSameElements() throws Exception {
+        String[] test = {"Vasja", "Misha", "Petr", "Misha", "Anna"};
+        assertTrue(SameElements.sameElements(test));
+    }
+    public void testNullSameElements() throws Exception {
         assertFalse(SameElements.sameElements(null));
     }
 }

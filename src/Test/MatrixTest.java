@@ -4,59 +4,68 @@ import static org.junit.Assert.*;
 public class MatrixTest {
 
     @Test(timeout = 1000)
-    public void testMultiplMatrix() throws Exception {
+    public void testDifferDimenMultiplMatrix() throws Exception {
         int[][] matA = {{-2, 1},
-                {5, 4}};
+                         {5, 4}};
         int[][] matB = {{3},
-                {-1}};
+                       {-1}};
         int[][] matAB = {{-7},
-                {11}};
+                         {11}};
         assertTrue(Matrix.equallyMatix(matAB, Matrix.multiplMatrix(matA, matB)));
         assertFalse(Matrix.equallyMatix(matAB, Matrix.multiplMatrix(matB, matA)));
-        int[][] matA1 = {{2, -3},
-                {4, -6}};
-        int[][] matB1 = {{9, -6},
-                {6, -4}};
-        int[][] matAB1 = {{0, 0},
-                {0, 0}};
-        assertTrue(Matrix.equallyMatix(matAB1, Matrix.multiplMatrix(matA1, matB1)));
-        assertFalse(Matrix.equallyMatix(matAB1, Matrix.multiplMatrix(matB1, matA1)));
-        int[][] matA2 = {{5, 8, -4},
-                {6, 9, -5},
-                {4, 7, -3}};
-        int[][] matB2 = {{3, 2, 5},
-                {4, -1, 3},
-                {9, 6, 5}};
-        int[][] matAB2 = {{11, -22, 29},
-                {9, -27, 32},
-                {13, -17, 26}};
-        assertTrue(Matrix.equallyMatix(matAB2, Matrix.multiplMatrix(matA2, matB2)));
-        assertFalse(Matrix.equallyMatix(matAB2, Matrix.multiplMatrix(matB2, matA2)));
+    }
+    @Test(timeout = 1000)
+    public void testSameDimenMultiplMatrix() throws Exception {
+        int[][] matA = {{2, -3},
+                        {4, -6}};
+        int[][] matB = {{9, -6},
+                        {6, -4}};
+        int[][] matAB = {{0, 0},
+                         {0, 0}};
+        assertTrue(Matrix.equallyMatix(matAB, Matrix.multiplMatrix(matA, matB)));
+        assertFalse(Matrix.equallyMatix(matAB, Matrix.multiplMatrix(matB, matA)));
+    }
+    @Test(timeout = 1000)
+    public void testNullMultiplMatrix() throws Exception {
+        int[][] matA = {{-2, 1},
+                         {5, 4}};
         assertTrue(Matrix.equallyMatix(null, Matrix.multiplMatrix(null, matA)));
         assertTrue(Matrix.equallyMatix(null, Matrix.multiplMatrix(matA, null)));
         assertTrue(Matrix.equallyMatix(null, Matrix.multiplMatrix(null, null)));
-        assertTrue(Matrix.equallyMatix(null, Matrix.multiplMatrix(matAB2, matA)));
     }
-
     @Test
-    public void testEquallyMatix() throws Exception {
-        int[][] matA = {{-2, 1},
-                {5, 4}};
-        int[][] matB = {{3},
-                {-1}};
+    public void testNullEquallyMatix() throws Exception {
         assertTrue(Matrix.equallyMatix(null, null));
-        assertTrue(Matrix.equallyMatix(matA,matA));
+    }
+    @Test
+    public void testEmptyEquallyMatix() throws Exception {
+        int[][] mat={};
+        assertTrue(Matrix.equallyMatix(mat, mat));
+    }
+    @Test
+    public void testReflexEquallyMatix() throws Exception {
+        int[][] matA = {{5, 8, -4},
+                        {6, 9, -5},
+                        {4, 7, -3}};
+        assertTrue(Matrix.equallyMatix(matA, matA));
+    }
+    @Test
+    public void testDifferDimenEquallyMatix() throws Exception {
+        int[][] matA = {{-2, 1},
+                        {5, 4}};
+        int[][] matB = {{3},
+                       {-1}};
         assertFalse(Matrix.equallyMatix(matA, matB));
         assertFalse(Matrix.equallyMatix(matB, matA));
-        assertFalse(Matrix.equallyMatix(null, matB));
-        assertFalse(Matrix.equallyMatix(matA, null));
+    }
+    @Test
+    public void testSameDimenEquallyMatix() throws Exception {
         int[][] matA2 = {{5, 8, -4},
-                {6, 9, -5},
-                {4, 7, -3}};
+                         {6, 9, -5},
+                         {4, 7, -3}};
         int[][] matB2 = {{3, 2, 5},
-                {4, -1, 3},
-                {9, 6, 5}};
-        assertTrue(Matrix.equallyMatix(matA2, matA2));
+                         {4, -1, 3},
+                         {9, 6, 5}};
         assertFalse(Matrix.equallyMatix(matA2, matB2));
         assertFalse(Matrix.equallyMatix(matB2, matA2));
     }
