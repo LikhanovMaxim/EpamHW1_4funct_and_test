@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 public class MatrixTest {
 
     @Test(timeout = 1000)
-    public void testDifferDimenMultiplMatrix() throws Exception {
+    public void DifferDimenMultiplMatrix() throws Exception {
         int[][] matA = {{-2, 1},
                          {5, 4}};
         int[][] matB = {{3},
@@ -15,7 +15,7 @@ public class MatrixTest {
         assertFalse(Matrix.equallyMatix(matAB, Matrix.multiplMatrix(matB, matA)));
     }
     @Test(timeout = 1000)
-    public void testSameDimenMultiplMatrix() throws Exception {
+    public void SameDimenMultiplMatrix() throws Exception {
         int[][] matA = {{2, -3},
                         {4, -6}};
         int[][] matB = {{9, -6},
@@ -26,7 +26,7 @@ public class MatrixTest {
         assertFalse(Matrix.equallyMatix(matAB, Matrix.multiplMatrix(matB, matA)));
     }
     @Test(timeout = 1000)
-    public void testNullMultiplMatrix() throws Exception {
+    public void NullMultiplMatrix() throws Exception {
         int[][] matA = {{-2, 1},
                          {5, 4}};
         assertTrue(Matrix.equallyMatix(null, Matrix.multiplMatrix(null, matA)));
@@ -34,23 +34,23 @@ public class MatrixTest {
         assertTrue(Matrix.equallyMatix(null, Matrix.multiplMatrix(null, null)));
     }
     @Test
-    public void testNullEquallyMatix() throws Exception {
+    public void NullEquallyMatix() throws Exception {
         assertTrue(Matrix.equallyMatix(null, null));
     }
     @Test
-    public void testEmptyEquallyMatix() throws Exception {
+    public void EmptyEquallyMatix() throws Exception {
         int[][] mat={};
         assertTrue(Matrix.equallyMatix(mat, mat));
     }
     @Test
-    public void testReflexEquallyMatix() throws Exception {
+    public void ReflexEquallyMatix() throws Exception {
         int[][] matA = {{5, 8, -4},
                         {6, 9, -5},
                         {4, 7, -3}};
         assertTrue(Matrix.equallyMatix(matA, matA));
     }
     @Test
-    public void testDifferDimenEquallyMatix() throws Exception {
+    public void DifferDimenEquallyMatix() throws Exception {
         int[][] matA = {{-2, 1},
                         {5, 4}};
         int[][] matB = {{3},
@@ -59,7 +59,7 @@ public class MatrixTest {
         assertFalse(Matrix.equallyMatix(matB, matA));
     }
     @Test
-    public void testSameDimenEquallyMatix() throws Exception {
+    public void SameDimenEquallyMatix() throws Exception {
         int[][] matA2 = {{5, 8, -4},
                          {6, 9, -5},
                          {4, 7, -3}};
