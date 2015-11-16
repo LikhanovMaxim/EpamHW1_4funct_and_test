@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class IntersectArrays {
     static void printArray(double[] array) {
         for (int i = 0; i < array.length; i++) {
@@ -5,58 +7,57 @@ public class IntersectArrays {
         }
         System.out.println();
     }
-    static boolean entryElementArr(double[] mas, double comparElem) {
-        if(mas==null){
+
+    static boolean containsElementArr(double[] arr, double comparElem) {
+        if (arr == null) {
             return false;
         }
-        boolean flag;
-        flag = false;
-        for (int i = 0; i < mas.length; i++) {
-            if (mas[i] == comparElem) {
-                flag = true;
-                break;
+//        for (double element: arr) {
+//            if (arr[element]== comparElem) {
+//                return true;
+//            }
+//        }
+        for (int element = 0; element < arr.length; element++) {
+            if (arr[element] == comparElem) {
+                return true;
             }
         }
-        return flag;
+        return false;
     }
-    static boolean equallyArray(double[] firstArray, double[] secondArray) {
-        if (firstArray == null && secondArray == null) {
-            return true;
-        }
-        if (firstArray == null || secondArray == null) {
-            return false;
-        }
-        if (firstArray.length != secondArray.length) {
-            return false;
-        }
-        boolean flag;
-        flag = true;
-        for (int i = 0; i < firstArray.length; i++) {
-            if (firstArray[i] != secondArray[i]) {
-                flag = false;
-                break;
-            }
-        }
-        return flag;
-    }
-    static int selectionMin(int firstNum, int secondNum){
-        if(firstNum<secondNum){
-            return firstNum;
-        }else {
-            return secondNum;
-        }
-    }
+
+//    static boolean equallyArray(double[] firstArray, double[] secondArray) {
+//        if (firstArray == null && secondArray == null) {
+//            return true;
+//        }
+//        if (firstArray == null || secondArray == null) {
+//            return false;
+//        }
+//        if (firstArray.length != secondArray.length) {
+//            return false;
+//        }
+//        boolean flag;
+//        flag = true;
+//        for (int i = 0; i < firstArray.length; i++) {
+//            if (firstArray[i] != secondArray[i]) {
+//                flag = false;
+//                break;
+//            }
+//        }
+//        return flag;
+//    }
+
     static double[] intersectArrays(double[] firstArray, double[] secondArray) {
         if (firstArray == null || secondArray == null) {
-            return null;
+            double[] arr = {};
+            return arr;
         }
         double[] intersArrays;
-        int dimension=selectionMin(firstArray.length, secondArray.length);
-        intersArrays=new double[dimension];
+        int dimension = Math.min(firstArray.length, secondArray.length);
+        intersArrays = new double[dimension];
         int dimensInterArr;
         dimensInterArr = 0;
         for (int i = 0; i < firstArray.length; i++) {
-            if (!entryElementArr(intersArrays, firstArray[i])) {
+            if (!containsElementArr(intersArrays, firstArray[i])) {
                 for (int j = 0; j < secondArray.length; j++) {
                     if (firstArray[i] == secondArray[j]) {
                         intersArrays[dimensInterArr] = firstArray[i];
@@ -67,10 +68,7 @@ public class IntersectArrays {
             }
         }
         double[] optimizeInters;
-        optimizeInters = new double[dimensInterArr];
-        for (int i = 0; i < dimensInterArr; i++) {
-            optimizeInters[i] = intersArrays[i];
-        }
+        optimizeInters = Arrays.copyOf(intersArrays, dimensInterArr);
         return optimizeInters;
     }
 
