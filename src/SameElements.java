@@ -1,18 +1,18 @@
 public class SameElements {
-    static boolean sameElements(String[] mas) {
-        if (mas == null) {
+    static boolean sameElements(String[] arr) {
+        if (arr == null) {
             return false;
         }
-        boolean flag = false;
-        for (int firstWord = 0; firstWord < mas.length; firstWord++) {
-            for (int secondWord = firstWord + 1; secondWord < mas.length; secondWord++) {
-                if (mas[firstWord].equals(mas[secondWord])) {
-                    flag = true;
+        boolean occurren = false;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i].equals(arr[j])) {
+                    occurren = true;
                     break;
                 }
             }
         }
-        return flag;
+        return occurren;
     }
 
 }
