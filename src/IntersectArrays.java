@@ -48,8 +48,8 @@ public class IntersectArrays {
 
     static double[] intersectArrays(double[] firstArray, double[] secondArray) {
         if (firstArray == null || secondArray == null) {
-            double[] arr = {};
-            return arr;
+            double[] emptyArr = {};
+            return emptyArr;
         }
         double[] intersArrays;
         int dimension = Math.min(firstArray.length, secondArray.length);
