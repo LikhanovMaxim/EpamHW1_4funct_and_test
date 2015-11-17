@@ -7,59 +7,34 @@ import static org.junit.Assert.*;
 public class IntersectArraysTest {
 
     @Test
-    public void FirstElemEntryElementArr() throws Exception {
+    public void FirstElemEntryElement() throws Exception {
         double[] arr = {1, 2, 3, 6, 4, 5, 1, 6, 7};
-        assertTrue(IntersectArrays.containsElementArr(arr, 1));
+        assertTrue(IntersectArrays.containsElement(arr, 1));
     }
 
     @Test
-    public void MidleElemEntryElementArr() throws Exception {
+    public void MidleElemEntryElement() throws Exception {
         double[] arr = {1, 2, 3, 6, 4, 5, 1, 6, 7};
-        assertTrue(IntersectArrays.containsElementArr(arr, 6));
+        assertTrue(IntersectArrays.containsElement(arr, 6));
     }
 
     @Test
-    public void EndElemEntryElementArr() throws Exception {
+    public void EndElemEntryElement() throws Exception {
         double[] arr = {1, 2, 3, 6, 4, 5, 1, 6, 7};
-        assertTrue(IntersectArrays.containsElementArr(arr, 7));
+        assertTrue(IntersectArrays.containsElement(arr, 7));
     }
 
     @Test
-    public void NoOccurEntryElementArr() throws Exception {
+    public void NoOccurEntryElement() throws Exception {
         double[] arr = {1, 2, 3, 6, 4, 5, 1, 6, 7};
-        assertFalse(IntersectArrays.containsElementArr(arr, 8));
+        assertFalse(IntersectArrays.containsElement(arr, 8));
     }
 
     @Test
-    public void NullEntryElementArr() throws Exception {
-        assertFalse(IntersectArrays.containsElementArr(null, 1));
+    public void NullEntryElement() throws Exception {
+        assertFalse(IntersectArrays.containsElement(null, 1));
     }
 
-//    @Test
-//    public void NullEquallyArray() throws Exception {
-//        double[] arr1 = {1, 2, 3, 6, 4, 5, 1, 6, 7};
-//        assertTrue(IntersectArrays.equallyArray(null, null));
-//        assertFalse(IntersectArrays.equallyArray(arr1, null));
-//    }
-//
-//    @Test
-//    public void EmptyEquallyArray() throws Exception {
-//        double[] arr1 = {};
-//        assertTrue(IntersectArrays.equallyArray(arr1, arr1));
-//    }
-//
-//    @Test
-//    public void ReflexEquallyArray() throws Exception {
-//        double[] arr1 = {1, 2, 3, 6, 4, 5, 1, 6, 7};
-//        assertTrue(IntersectArrays.equallyArray(arr1, arr1));
-//    }
-//
-//    @Test
-//    public void DifferArrEquallyArray() throws Exception {
-//        double[] arr2 = {1, 2, 3, 4, 5};
-//        double[] arr3 = {5, 4, 3, 2, 1};
-//        assertFalse(IntersectArrays.equallyArray(arr2, arr3));
-//    }
 
     @Test
     public void ReflexIntersectArrays() throws Exception {
@@ -92,5 +67,29 @@ public class IntersectArraysTest {
         assertFalse(Arrays.equals(arr1, IntersectArrays.intersectArrays(arr1, null)));
     }
 
-
+//    @Test
+//    public void NullEquallyArray() throws Exception {
+//        double[] arr1 = {1, 2, 3, 6, 4, 5, 1, 6, 7};
+//        assertTrue(IntersectArrays.equallyArray(null, null));
+//        assertFalse(IntersectArrays.equallyArray(arr1, null));
+//    }
+//
+//    @Test
+//    public void EmptyEquallyArray() throws Exception {
+//        double[] arr1 = {};
+//        assertTrue(IntersectArrays.equallyArray(arr1, arr1));
+//    }
+//
+//    @Test
+//    public void ReflexEquallyArray() throws Exception {
+//        double[] arr1 = {1, 2, 3, 6, 4, 5, 1, 6, 7};
+//        assertTrue(IntersectArrays.equallyArray(arr1, arr1));
+//    }
+//
+//    @Test
+//    public void DifferArrEquallyArray() throws Exception {
+//        double[] arr2 = {1, 2, 3, 4, 5};
+//        double[] arr3 = {5, 4, 3, 2, 1};
+//        assertFalse(IntersectArrays.equallyArray(arr2, arr3));
+//    }
 }

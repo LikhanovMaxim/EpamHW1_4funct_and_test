@@ -1,14 +1,14 @@
 import java.util.Arrays;
 
 public class IntersectArrays {
-    static void printArray(double[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-        System.out.println();
-    }
+//    static void printArray(double[] array) {
+//        for (int i = 0; i < array.length; i++) {
+//            System.out.print(array[i] + " ");
+//        }
+//        System.out.println();
+//    }
 
-    static boolean containsElementArr(double[] arr, double comparElem) {
+    static boolean containsElement(double[] arr, double comparElem) {
         if (arr == null) {
             return false;
         }
@@ -57,7 +57,7 @@ public class IntersectArrays {
         int dimensInterArr;
         dimensInterArr = 0;
         for (int i = 0; i < firstArray.length; i++) {
-            if (!containsElementArr(intersArrays, firstArray[i])) {
+            if (!containsElement(intersArrays, firstArray[i])) {
                 for (int j = 0; j < secondArray.length; j++) {
                     if (firstArray[i] == secondArray[j]) {
                         intersArrays[dimensInterArr] = firstArray[i];

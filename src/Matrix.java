@@ -1,18 +1,18 @@
 public class Matrix {
-    static void printMatrix(int[][] Matrix) {
-        if (Matrix == null) {
-            System.out.println("Matrix = null");
-            return;
-        }
-        for (int rows = 0; rows < Matrix.length; rows++) {
-            for (int columns = 0; columns < Matrix[0].length; columns++) {
-                System.out.print(Matrix[rows][columns] + " ");
-            }
-            System.out.println();
-        }
-    }
+//    static void printMatrix(int[][] Matrix) {
+//        if (Matrix == null) {
+//            System.out.println("Matrix = null");
+//            return;
+//        }
+//        for (int rows = 0; rows < Matrix.length; rows++) {
+//            for (int columns = 0; columns < Matrix[0].length; columns++) {
+//                System.out.print(Matrix[rows][columns] + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
 
-    static boolean equallyMatix(int[][] firstMatrix, int[][] secondMatrix) {
+    static boolean equally(int[][] firstMatrix, int[][] secondMatrix) {
         if (firstMatrix == null && secondMatrix == null) {
             return true;
         }
@@ -58,13 +58,13 @@ public class Matrix {
         return sum;
     }
 
-    static int[][] multiplMatrix(int[][] firstMatrix, int[][] secondMatrix) {
+    static int[][] multipl(int[][] firstMatrix, int[][] secondMatrix) {
         if (firstMatrix == null || secondMatrix == null) {
-            int[][] emptyMat ={{}};
+            int[][] emptyMat = {{}};
             return emptyMat;
         }
         if (firstMatrix[0].length != secondMatrix.length) {
-            int[][] emptyMat ={{}};
+            int[][] emptyMat = {{}};
             return emptyMat;
         }
         int[][] mulMatrix;
