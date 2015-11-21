@@ -16,10 +16,6 @@ public class Matrix {
         boolean flag;
         flag = true;
         for (int rows = 0; rows < firstMatrix.length && flag; rows++) {
-            if (firstMatrix[rows].length != secondMatrix[rows].length) {
-                flag = false;
-                break;
-            }
             for (int columns = 0; columns < firstMatrix[rows].length; columns++) {
                 if (firstMatrix[rows][columns] != secondMatrix[rows][columns]) {
                     flag = false;
