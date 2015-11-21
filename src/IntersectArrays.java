@@ -1,45 +1,17 @@
 import java.util.Arrays;
 
 public class IntersectArrays {
-//    static void printArray(double[] array) {
-//        for (int i = 0; i < array.length; i++) {
-//            System.out.print(array[i] + " ");
-//        }
-//        System.out.println();
-//    }
-
     static boolean contains(double[] arr, double comparElem) {
         if (arr == null) {
             return false;
         }
-        for (double element: arr) {
+        for (double element : arr) {
             if (element == comparElem) {
                 return true;
             }
         }
         return false;
     }
-
-//    static boolean equallyArray(double[] firstArray, double[] secondArray) {
-//        if (firstArray == null && secondArray == null) {
-//            return true;
-//        }
-//        if (firstArray == null || secondArray == null) {
-//            return false;
-//        }
-//        if (firstArray.length != secondArray.length) {
-//            return false;
-//        }
-//        boolean flag;
-//        flag = true;
-//        for (int i = 0; i < firstArray.length; i++) {
-//            if (firstArray[i] != secondArray[i]) {
-//                flag = false;
-//                break;
-//            }
-//        }
-//        return flag;
-//    }
 
     static double[] intersectArrays(double[] firstArray, double[] secondArray) {
         if (firstArray == null || secondArray == null) {
@@ -66,5 +38,4 @@ public class IntersectArrays {
         optimizeInters = Arrays.copyOf(intersArrays, dimensInterArr);
         return optimizeInters;
     }
-
 }
