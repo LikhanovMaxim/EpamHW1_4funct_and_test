@@ -8,17 +8,12 @@ public class IntersectArrays {
 //        System.out.println();
 //    }
 
-    static boolean containsElement(double[] arr, double comparElem) {
+    static boolean contains(double[] arr, double comparElem) {
         if (arr == null) {
             return false;
         }
-//        for (double element: arr) {
-//            if (arr[element]== comparElem) {
-//                return true;
-//            }
-//        }
-        for (int element = 0; element < arr.length; element++) {
-            if (arr[element] == comparElem) {
+        for (double element: arr) {
+            if (element == comparElem) {
                 return true;
             }
         }
@@ -57,7 +52,7 @@ public class IntersectArrays {
         int dimensInterArr;
         dimensInterArr = 0;
         for (int i = 0; i < firstArray.length; i++) {
-            if (!containsElement(intersArrays, firstArray[i])) {
+            if (!contains(intersArrays, firstArray[i])) {
                 for (int j = 0; j < secondArray.length; j++) {
                     if (firstArray[i] == secondArray[j]) {
                         intersArrays[dimensInterArr] = firstArray[i];

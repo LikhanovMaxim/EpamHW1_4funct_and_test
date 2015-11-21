@@ -9,30 +9,30 @@ public class IntersectArraysTest {
     @Test
     public void FirstElemEntryElement() throws Exception {
         double[] arr = {1, 2, 3, 6, 4, 5, 1, 6, 7};
-        assertTrue(IntersectArrays.containsElement(arr, 1));
+        assertTrue(IntersectArrays.contains(arr, 1));
     }
 
     @Test
     public void MidleElemEntryElement() throws Exception {
         double[] arr = {1, 2, 3, 6, 4, 5, 1, 6, 7};
-        assertTrue(IntersectArrays.containsElement(arr, 6));
+        assertTrue(IntersectArrays.contains(arr, 6));
     }
 
     @Test
     public void EndElemEntryElement() throws Exception {
         double[] arr = {1, 2, 3, 6, 4, 5, 1, 6, 7};
-        assertTrue(IntersectArrays.containsElement(arr, 7));
+        assertTrue(IntersectArrays.contains(arr, 7));
     }
 
     @Test
     public void NoOccurEntryElement() throws Exception {
         double[] arr = {1, 2, 3, 6, 4, 5, 1, 6, 7};
-        assertFalse(IntersectArrays.containsElement(arr, 8));
+        assertFalse(IntersectArrays.contains(arr, 8));
     }
 
     @Test
     public void NullEntryElement() throws Exception {
-        assertFalse(IntersectArrays.containsElement(null, 1));
+        assertFalse(IntersectArrays.contains(null, 1));
     }
 
 
