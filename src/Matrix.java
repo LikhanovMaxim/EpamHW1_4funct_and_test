@@ -1,16 +1,4 @@
 public class Matrix {
-//    static void printMatrix(int[][] Matrix) {
-//        if (Matrix == null) {
-//            System.out.println("Matrix = null");
-//            return;
-//        }
-//        for (int rows = 0; rows < Matrix.length; rows++) {
-//            for (int columns = 0; columns < Matrix[0].length; columns++) {
-//                System.out.print(Matrix[rows][columns] + " ");
-//            }
-//            System.out.println();
-//        }
-//    }
 
     static boolean equally(int[][] firstMatrix, int[][] secondMatrix) {
         if (firstMatrix == null && secondMatrix == null) {
