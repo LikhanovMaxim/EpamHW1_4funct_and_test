@@ -10,11 +10,13 @@ public class SameElementsTest {
         String[] test = {"Vasja", "Misha", "Petr", "Anna"};
         assertFalse(SameElements.sameElements(test));
     }
+
     @Test
     public void SameWordsSameElements() throws Exception {
         String[] test = {"Vasja", "Misha", "Petr", "Misha", "Anna"};
         assertTrue(SameElements.sameElements(test));
     }
+
     @Test
     public void NullSameElements() throws Exception {
         assertFalse(SameElements.sameElements(null));
